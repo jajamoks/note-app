@@ -41,8 +41,127 @@ Run the using:
 php artisan serve
 ```
 
-## PHPUnit Test
-To run the unit test, go to the project root and run unit test feature
+## Code Exam 2
 ```
-phpunit
+Open online php editor(https://repl.it/languages/php_cli) and paste the code below:
 ```
+<?php
+
+/****************** 
+* Code Test 2
+*****************/
+
+// random generator function
+function randomNumbers($lastRange){
+  $random_number_array = range(0, 10);
+  $from = 0;
+  shuffle($random_number_array );
+  $randNumber = array_slice($random_number_array ,$from, $lastRange);
+  return $randNumber;
+}
+
+
+/* 
+* Problem 1
+* Pick 2 random numbers and calculate sum
+*/
+function sumTwoNumbers(){
+  $randomNumbers = randomNumbers(2);
+  $totalSum = array_sum($randomNumbers);
+  return $totalSum;
+}
+print_r(sumTwoNumbers());
+
+
+
+/* 
+* Problem 2
+* Sort method - access an order parameters (ASC, DESC), and returns a
+result sorted based on the parameter
+*/
+
+function sortNumber($sortType){
+  $sortedNumbers = [];
+  $randomNumbers = randomNumbers(10);
+
+  switch ($sortType) {
+    case "asc":
+      asort($randomNumbers);
+      break;
+
+    case "desc":
+      rsort($randomNumbers);
+      break;
+    default:
+      asort($randomNumbers);
+  }
+  if (array($randomNumbers)) {
+    foreach($randomNumbers as $x_num) {
+      $sortedNumbers[] = $x_num;
+    }
+  }
+  return $sortedNumbers;
+}
+// pass the value of 'asc' and 'desc'
+print_r(sortNumber('asc'));
+
+
+/* 
+* Problem 3
+* Average method - returns the average of all the value of the integers
+inside the property array
+*/
+
+function getAverage(){
+  $arrayProps = randomNumbers(10);
+  $average = 0;
+  if(count($arrayProps)) {
+     $average = array_sum($arrayProps)/count($arrayProps);
+  }
+  return $average;
+}
+print_r(getAverage());
+
+
+
+/* 
+* Problem 4
+* Create a class that inherits the main class and override the sum
+method and inisde the override method calculate the sum of the start and
+last indexes of the array
+*/
+
+class BaseClass {
+  public $range;
+  public function __construct($range) {
+    $this->range = $range;
+  }
+
+}
+
+class Inheritor extends BaseClass {
+  public $range;
+  public function __construct($range) {
+    $this->name = $range;
+  }
+  public function calculate() {
+
+    $random_number_array = range(0, 10);
+    $from = 0;
+    shuffle($random_number_array );
+    $randNumber = array_slice($random_number_array ,$from, $this->range);
+
+    $toArrays = array($randNumber);
+    $calculateFirstAndLastArray = current($randNumber) + end($randNumber);
+
+    print_r($calculateFirstAndLastArray);
+  }
+}
+
+$inheritClass = new Inheritor(10);
+$inheritClass->calculate();
+
+
+
+
+
