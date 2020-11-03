@@ -39,10 +39,10 @@ php artisan migrate
 Run the using:
 ```
 php artisan serve
-```
 
-## Code Exam 2
-```
+
+## Exam Code 2
+
 Open online php editor(https://repl.it/languages/php_cli) and paste the code below:
 ```
 <?php
