@@ -43,7 +43,7 @@ php artisan serve
 
 ## Exam Code 2
 
-Open online php editor(https://repl.it/languages/php_cli) and paste the code below:
+Open online php editor(https://repl.it/languages/php_cli) and paste the code below. Or you can check it here: https://repl.it/@MojicaMasamoc/ThunderousHeftyEquations
 ```
 <?php
 
